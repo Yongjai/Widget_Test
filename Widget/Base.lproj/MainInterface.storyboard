@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gyA-w3-CgW">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="f2Y-L8-ygQ">
+            <objects>
+                <viewController id="gyA-w3-CgW" customClass="TodayViewController" customModule="Widget" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Ehb-sG-h25">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="350"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="efp-XC-fJC">
+                            <size key="itemSize" width="80" height="80"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="2tj-Tw-frQ" customClass="WidgetCollectionViewCell" customModule="Widget" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6k5-lL-MMb">
+                                            <rect key="frame" x="25" y="47" width="45" height="28"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                            <state key="normal" title="보러가기"/>
+                                            <connections>
+                                                <action selector="moveDetailVC:" destination="gyA-w3-CgW" eventType="touchUpInside" id="iC1-av-gCn"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iup-5X-cvn">
+                                            <rect key="frame" x="100" y="5" width="200" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="200" id="eHz-q3-9gu"/>
+                                                <constraint firstAttribute="height" constant="35" id="ebU-sz-r12"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MQm-Fn-k57">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.54272633790000002" green="0.74690341950000005" blue="0.68169164660000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="6k5-lL-MMb" secondAttribute="trailing" constant="10" id="0fI-tq-xXk"/>
+                                    <constraint firstItem="iup-5X-cvn" firstAttribute="top" secondItem="2tj-Tw-frQ" secondAttribute="top" constant="5" id="EK0-xL-Fa4"/>
+                                    <constraint firstItem="iup-5X-cvn" firstAttribute="leading" secondItem="2tj-Tw-frQ" secondAttribute="leading" constant="100" id="tFk-pc-UfK"/>
+                                    <constraint firstAttribute="bottom" secondItem="6k5-lL-MMb" secondAttribute="bottom" constant="5" id="tsl-Cm-8tw"/>
+                                </constraints>
+                                <size key="customSize" width="80" height="80"/>
+                                <connections>
+                                    <outlet property="cellImage" destination="MQm-Fn-k57" id="kdY-nb-yUA"/>
+                                    <outlet property="goButton" destination="6k5-lL-MMb" id="EIY-mc-uCc"/>
+                                    <outlet property="titleLabel" destination="iup-5X-cvn" id="XwT-nf-jXO"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="gyA-w3-CgW" id="Rag-CX-Hkx"/>
+                            <outlet property="delegate" destination="gyA-w3-CgW" id="tcY-Pk-jDE"/>
+                        </connections>
+                    </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="350"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Ehb-sG-h25" id="whi-gU-JiX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9du-4k-Q8t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-571.20000000000005" y="31.484257871064472"/>
+        </scene>
+    </scenes>
+</document>
